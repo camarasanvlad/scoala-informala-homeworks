@@ -8,18 +8,18 @@ import java.util.List;
  */
 class SalesDepartment {
 
-    String deparmentName;
+    String departmentName;
     List<SalesRepresentative> salesRepresentatives;
 
-    public SalesDepartment(String deparmentName) {
-        this.deparmentName = deparmentName;
+    public SalesDepartment(String departmentname) {
+        this.departmentName = departmentname;
         salesRepresentatives = new ArrayList<>();
     }
 
     @Override
     public String toString() {
         return "\nSalesDepartment{" +
-                "deparmentName='" + deparmentName + '\'' +
+                "departmentName='" + departmentName + '\'' +
                 ", \nsalesRepresentatives=" + salesRepresentatives +
                 '}';
     }

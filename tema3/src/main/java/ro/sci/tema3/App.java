@@ -11,10 +11,12 @@ public class App {
     public static void main(String[] args) {
 
         SalesCompany company = inputData();
-        System.out.println("\nCompany: " + company);
-        System.out.println("Total sales: " + company.computeTotalSales());
-        System.out.println(" Most successful dep " + company.mostSuccessfulDep());
-        System.out.println("Best sales person: " + company.bestSalesRep());
+        System.out.println("\nCompany: " + company + "\n");
+        System.out.println("\nThe company achieved total worth of sales of " + company.computeTotalSales() + "$.");
+        System.out.println("\nMost successful department is " + company.mostSuccessfulDep().departmentName + ".");
+        System.out.println("\nBest sales person from entire company is " + company.bestSalesRep().name +
+                " with " +company.bestSalesRep().sales + " sales, and total worth of sales of " +
+                company.bestSalesRep().getWorthOfSales() + "$.");
     }
 
     private static SalesCompany inputData() {
@@ -33,8 +35,8 @@ public class App {
 
     private static SalesDepartment inputSalesDepartment(Scanner input) {
         System.out.println("Enter name of department: ");
-        String deparmentName = input.next();
-        SalesDepartment department = new SalesDepartment(deparmentName);
+        String departmentName = input.next();
+        SalesDepartment department = new SalesDepartment(departmentName);
         System.out.println("Enter number of sales representatives: ");
         int numberOfRepresentatives = input.nextInt();
         for (int i = 0; i < numberOfRepresentatives; i++) {
@@ -45,7 +47,7 @@ public class App {
     }
 
     private static SalesRepresentative inputSalesRepresentatives(Scanner input) {
-        System.out.println("Enter name for sales representative ");
+        System.out.println("Enter name for sales representative: ");
         String name = input.next();
         System.out.println("Enter how many sales had " + name + ": ");
         int sales = input.nextInt();
